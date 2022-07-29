@@ -1,9 +1,14 @@
 import React from "react";
+import { FooterContainer } from "./Footer.elements";
 
 const Footer = () => {
   return (
     <>
-      <footer></footer>
+      <footer>
+        <FooterContainer>
+          <p>&copy; 2020</p>
+        </FooterContainer>
+      </footer>
     </>
   );
 };
