@@ -1,4 +1,34 @@
-# Getting Started with Create React App
+<br/>
+<div align="center">  
+  <p><strong>Keepmo (Keep Memo)</strong> Dicoding Indonesia</p>
+</div>
+<br/>
+
+# 📒 Keepmo
+
+Keepmo (Keep Memo) is a note-keeping web application using the **React Js Library**.
+
+<div align="center">  
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![ReactJS](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=flat&logo=eslint&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat&logo=visual-studio-code&logoColor=white)
+</div>
+## 🧱 Features
+
+- Responsives all devices
+- Modern user interface design
+
+## ⭐ Review
+
+![dicoding-review-khoeru-roziqin-submission]()
+
+## ⚛ Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
