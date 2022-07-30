@@ -1,15 +1,16 @@
 import React from "react";
-import { FooterContainer, FooterText } from "./Footer.elements";
+import { Container } from "../Global.elements";
+import { FooterText } from "./Footer.elements";
 
 const Footer = () => {
   return (
     <>
       <footer>
-        <FooterContainer>
+        <Container>
           <FooterText>
             Copyright © 2020 Keep Memo. All rights reserved.
           </FooterText>
-        </FooterContainer>
+        </Container>
       </footer>
     </>
   );

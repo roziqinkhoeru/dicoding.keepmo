@@ -1,35 +1,46 @@
 import React from "react";
-import { FormNoteContainer, FormNoteSection } from "./FormNote.elements";
+import {
+  Container,
+  Form,
+  InputGroup,
+  Section,
+  TitleSection,
+} from "../Global.elements";
+import { TitleWelcome } from "./FormNote.elements";
 
 const FormNote = () => {
   return (
     <>
-      <FormNoteSection>
-        <FormNoteContainer>
-          <h3>Selamat Datang 👋</h3>
+      <Section id='formNote'>
+        <Container>
+          <TitleWelcome>Selamat Datang 👋</TitleWelcome>
           <div className=''>
-            <h1>Buat Catatanmu</h1>
-            <form>
-              <div className=''>
+            <TitleSection>Buat Catatanmu</TitleSection>
+            <Form>
+              <InputGroup>
                 <input
+                  className='input_field'
                   type='text'
                   name='judul'
                   id='judul'
                   placeholder='Judul'
                 />
-              </div>
-              <div className=''>
+              </InputGroup>
+              <InputGroup>
                 <textarea
+                  className='input_field'
                   name='catatan'
                   id='catatan'
                   cols='30'
-                  rows='10'
+                  rows='5'
+                  placeholder='Tulis catatanmu di sini...'
                 ></textarea>
-              </div>
-            </form>
+              </InputGroup>
+              <button type='submit'>Buat</button>
+            </Form>
           </div>
-        </FormNoteContainer>
-      </FormNoteSection>
+        </Container>
+      </Section>
     </>
   );
 };

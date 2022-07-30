@@ -31,22 +31,6 @@ export const NavbarPreference = styled.div`
     align-items: center;
   }
 `;
-export const Form = styled.form`
-  position: relative;
-  & .btn_search {
-    position: absolute;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    top: 0.7rem;
-    left: 1.25rem;
-    & * {
-      font-size: 1.125rem;
-      color: #8c90b7;
-    }
-  }
-`;
 export const ProfilePicContainer = styled.div`
   display: flex;
   align-items: center;

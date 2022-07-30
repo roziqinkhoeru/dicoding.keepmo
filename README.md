@@ -9,7 +9,7 @@ Keepmo (Keep Memo) is a note-keeping web application using the **React Js Librar
 ![SASS](https://img.shields.io/badge/Sass-CC6699?style=flatge&logo=sass&logoColor=white)
 ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![ReactJS](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=flat&logo=styled-components&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
 ![ESLint](https://img.shields.io/badge/eslint-3A33D1?style=flat&logo=eslint&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=flat&logo=git&logoColor=white)

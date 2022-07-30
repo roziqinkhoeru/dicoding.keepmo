@@ -1,6 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import { Form } from "../Navbar.elements";
+import { Form } from "../../Global.elements";
 
 const NavSearch = () => {
   return (
@@ -14,6 +14,8 @@ const NavSearch = () => {
             className='input_field search'
             type='text'
             placeholder='Search'
+            name='searchNav'
+            id='searchNav'
           />
         </Form>
       </div>

@@ -1,8 +1,8 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import FormNote from "./components/FormNote";
-import Note from "./components/Note";
-import Archive from "./components/Archive";
+import PublicNote from "./components/PublicNote";
+import ArchiveNote from "./components/ArchiveNote";
 
 import "./styles/base/_global.scss";
 import "./styles/style.scss";
@@ -13,8 +13,8 @@ function App() {
       <Navbar />
       <main>
         <FormNote />
-        <Note />
-        <Archive />
+        <PublicNote />
+        <ArchiveNote />
       </main>
       <Footer />
     </div>
