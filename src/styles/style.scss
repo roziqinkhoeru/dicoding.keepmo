@@ -1,5 +1,6 @@
 @use "abstracts" as *;
 
+// ===== navigation =====
 .nav_preference_item:not(:last-child) {
   margin-right: 0.75rem;
   cursor: pointer;
@@ -56,4 +57,10 @@
   &.search {
     width: 24rem;
   }
+}
+
+// ===== footer ======
+footer {
+  width: 100%;
+  background-color: $color-dark-400;
 }
