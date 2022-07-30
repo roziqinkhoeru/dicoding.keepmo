@@ -1,0 +1,14 @@
+@use "./base/global";
+@use "abstracts" as *;
+
+main {
+  color: $color-red;
+  background-color: #000;
+  width: 100%;
+  height: 10rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.title {
+  font-size: 4rem;
+}
