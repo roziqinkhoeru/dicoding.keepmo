@@ -1,10 +1,19 @@
 import React from "react";
-import { NavbarContainer } from "./Navbar.elements";
+import NavBrand from "./common/NavBrand";
+import NavPreference from "./common/NavPreference";
+import NavSearch from "./common/NavSearch";
+import { NavbarContainer, Navigation } from "./Navbar.elements";
 
 const Navbar = () => {
   return (
     <>
-      <NavbarContainer></NavbarContainer>
+      <Navigation>
+        <NavbarContainer>
+          <NavBrand titleBrand='Keepmo.' />
+          <NavSearch />
+          <NavPreference version='1.0.0' name='DI' isGrid={true} />
+        </NavbarContainer>
+      </Navigation>
     </>
   );
 };

@@ -1,5 +1,23 @@
+@use "../abstracts/" as *;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-space-grotesk;
+  color: $color-white-90;
+  font-size: 0.98rem;
+}
+
+body {
+  background-color: $color-dark-200;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
