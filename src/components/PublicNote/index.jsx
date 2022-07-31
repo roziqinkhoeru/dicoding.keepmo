@@ -19,6 +19,11 @@ const PublicNote = ({
   deleteHandling,
   searchResult,
 }) => {
+  const publicNotes = notes
+    ?.filter((noteItem) => noteItem.archived === false)
+    ?.filter((noteItem) =>
+      noteItem.title.toLowerCase().includes(searchResult.toLowerCase())
+    );
   return (
     <>
       <Section id='publicNote'>
@@ -26,23 +31,10 @@ const PublicNote = ({
           <Wrapper>
             <TitleSection>Catatanmu</TitleSection>
             <NoteContainer>
-              {notes?.length === 0 ? (
-                <EmptyNote />
+              {publicNotes.length === 0 ? (
+                <EmptyNote isArchived={false} />
               ) : (
-                notes
-                  ?.filter((noteItem) => {
-                    if (noteItem.archived === false) {
-                      if (searchResult === "") {
-                        return noteItem;
-                      } else if (
-                        noteItem.title
-                          .toLowerCase()
-                          .includes(searchResult.toLowerCase())
-                      ) {
-                        return noteItem;
-                      }
-                    }
-                  })
+                publicNotes
                   ?.sort((a, b) => (a.id > b.id ? -1 : 1))
                   ?.map((noteItem) => {
                     return (

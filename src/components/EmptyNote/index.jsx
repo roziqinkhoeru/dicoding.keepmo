@@ -1,12 +1,24 @@
 import React from "react";
+import {
+  EmptyNoteBody,
+  EmptyNoteTitle,
+  EmptyNoteWrapper,
+} from "./EmptyNote.elements";
+import { BiArchiveIn } from "react-icons/bi";
+import { MdOutlineStickyNote2 } from "react-icons/md";
 
-const EmptyNote = () => {
+const EmptyNote = ({ isArchived }) => {
   return (
-    <div>
-      <div className=''>
-        <h1>Kosong ya guys yak!</h1>
-      </div>
-    </div>
+    <>
+      <EmptyNoteWrapper>
+        <EmptyNoteBody>
+          {isArchived ? <BiArchiveIn /> : <MdOutlineStickyNote2 />}
+          <EmptyNoteTitle>
+            Tidak ada catatan{isArchived && " di arsip"}
+          </EmptyNoteTitle>
+        </EmptyNoteBody>
+      </EmptyNoteWrapper>
+    </>
   );
 };
 

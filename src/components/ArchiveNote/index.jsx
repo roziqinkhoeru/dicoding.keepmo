@@ -19,6 +19,11 @@ const ArchiveNote = ({
   deleteHandling,
   searchResult,
 }) => {
+  const archivedNotes = notes
+    ?.filter((noteItem) => noteItem.archived)
+    ?.filter((noteItem) =>
+      noteItem.title.toLowerCase().includes(searchResult.toLowerCase())
+    );
   return (
     <>
       <Section id='archiveNote'>
@@ -26,23 +31,10 @@ const ArchiveNote = ({
           <Wrapper>
             <TitleSection>Arsip</TitleSection>
             <NoteContainer>
-              {notes?.length === 0 ? (
-                <EmptyNote />
+              {archivedNotes.length === 0 ? (
+                <EmptyNote isArchived={true} />
               ) : (
-                notes
-                  ?.filter((noteItem) => {
-                    if (noteItem.archived) {
-                      if (searchResult === "") {
-                        return noteItem;
-                      } else if (
-                        noteItem.title
-                          .toLowerCase()
-                          .includes(searchResult.toLowerCase())
-                      ) {
-                        return noteItem;
-                      }
-                    }
-                  })
+                archivedNotes
                   ?.sort((a, b) => (a.id > b.id ? -1 : 1))
                   ?.map((noteItem) => {
                     return (
