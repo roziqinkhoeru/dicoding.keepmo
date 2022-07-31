@@ -2,12 +2,15 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { Form } from "../../Global.elements";
 
-const NavSearch = () => {
+const NavSearch = ({ searchNoteHandling }) => {
   return (
     <>
       <div>
         <Form id='formNavSearch'>
-          <button type='submit' className='btn_search'>
+          <button
+            className='btn_search'
+            onClick={(event) => event.preventDefault()}
+          >
             <FiSearch />
           </button>
           <input
@@ -16,6 +19,7 @@ const NavSearch = () => {
             placeholder='Search'
             name='searchNav'
             id='searchNav'
+            onChange={searchNoteHandling}
           />
         </Form>
       </div>

@@ -16,6 +16,39 @@
   }
 }
 .nav_preference_item {
+  position: relative;
+  // after
+  & .preference_icon::after {
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    white-space: nowrap;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    background-color: $color-dark-300;
+    color: $color-secondary;
+    visibility: hidden;
+    opacity: 0;
+    top: 2.8rem;
+  }
+  &:first-child:hover .preference_icon.grid_view:after {
+    left: -2.15rem;
+    content: "Tampilan petak";
+    visibility: visible;
+    opacity: 1;
+  }
+  &:first-child:hover .preference_icon.list_view:after {
+    left: -2.15rem;
+    content: "Tampilan daftar";
+    visibility: visible;
+    opacity: 1;
+  }
+  &:nth-child(2):hover .preference_icon::after {
+    left: -1.4rem;
+    content: "Pengaturan";
+    visibility: visible;
+    opacity: 1;
+  }
   // media queries
   @media (max-width: 991px) {
     &:nth-child(3) {
@@ -53,7 +86,7 @@
     }
   }
   & svg {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     & * {
       color: $color-secondary;
       transition: all 0.2s ease-in-out;
@@ -84,6 +117,10 @@
       width: 42vw;
     }
   }
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 // ===== footer ======

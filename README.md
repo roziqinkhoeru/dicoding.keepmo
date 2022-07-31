@@ -18,6 +18,9 @@ Keepmo (Keep Memo) is a note-keeping web application using the **React Js Librar
 ## 🧱 Features
 
 - Responsives all devices
+- Add, delete and archive notes
+- Search notes
+- Change notes view
 - Modern user interface design
 
 ## ⭐ Review

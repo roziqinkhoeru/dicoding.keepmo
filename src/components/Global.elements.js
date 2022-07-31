@@ -54,6 +54,8 @@ export const Form = styled.form`
 
 export const TitleSection = styled.h2`
   margin-bottom: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 0.375rem;
 `;
 
 export const Wrapper = styled.div`
@@ -77,7 +79,8 @@ export const CardNote = styled.div`
   border-radius: 1rem;
   border: 1px solid transparent;
   background-color: #181c36;
-  grid-column: span 3 / span 3;
+  grid-column: ${({ isGrid }) =>
+    isGrid ? "span 3 / span 3" : "span 12 / span 12"};
   transition: all 0.2s ease-in-out;
   /* hover */
   &:hover {
@@ -94,10 +97,12 @@ export const CardNote = styled.div`
   }
   /* media queries */
   @media (max-width: 1200px) {
-    grid-column: span 4 / span 4;
+    grid-column: ${({ isGrid }) =>
+      isGrid ? "span 4 / span 4" : "span 12 / span 12"};
   }
   @media (max-width: 960px) {
-    grid-column: span 6 / span 6;
+    grid-column: ${({ isGrid }) =>
+      isGrid ? "span 6 / span 6" : "span 12 / span 12"};
   }
   @media (max-width: 520px) {
     grid-column: span 12 / span 12;
@@ -131,15 +136,18 @@ export const DateNote = styled.p`
   color: #8c90b7;
   margin-bottom: 0.875rem;
 `;
-export const IconNote = styled.div`
+export const IconsNote = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ isGrid }) => (isGrid ? "space-between" : "flex-end")};
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 `;
 export const BtnNote = styled.button`
+  &:last-child {
+    margin-left: ${({ isGrid }) => (isGrid ? "0" : "1rem")};
+  }
   border: 1px solid transparent;
   background-color: #755efc33;
   outline: none;

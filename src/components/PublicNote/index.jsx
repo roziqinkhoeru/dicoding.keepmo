@@ -1,4 +1,6 @@
 import React from "react";
+import Note from "../Note";
+import EmptyNote from "../EmptyNote";
 import {
   Section,
   Container,
@@ -6,9 +8,15 @@ import {
   Wrapper,
   NoteContainer,
 } from "../Global.elements";
-import Note from "../Note";
 
-const PublicNote = () => {
+const PublicNote = ({
+  notes,
+  isGrid,
+  archivedHandling,
+  unarchivedHandling,
+  deleteHandling,
+  searchResult,
+}) => {
   return (
     <>
       <Section id='publicNote'>
@@ -16,10 +24,36 @@ const PublicNote = () => {
           <Wrapper>
             <TitleSection>Catatanmu</TitleSection>
             <NoteContainer>
-              <Note archived={false} />
-              <Note archived={false} />
-              <Note archived={false} />
-              <Note archived={true} />
+              {notes?.length === 0 ? (
+                <EmptyNote />
+              ) : (
+                notes
+                  ?.filter((noteItem) => {
+                    if (noteItem.archived === false) {
+                      if (searchResult === "") {
+                        return noteItem;
+                      } else if (
+                        noteItem.title
+                          .toLowerCase()
+                          .includes(searchResult.toLowerCase())
+                      ) {
+                        return noteItem;
+                      }
+                    }
+                  })
+                  ?.map((noteItem) => {
+                    return (
+                      <Note
+                        key={noteItem.id}
+                        archivedHandling={archivedHandling}
+                        unarchivedHandling={unarchivedHandling}
+                        deleteHandling={deleteHandling}
+                        isGrid={isGrid}
+                        {...noteItem}
+                      />
+                    );
+                  })
+              )}
             </NoteContainer>
           </Wrapper>
         </Container>

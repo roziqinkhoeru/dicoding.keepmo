@@ -5,7 +5,7 @@ export const TitleWelcome = styled.h4`
 `;
 export const FormWrapper = styled.div`
   width: 100%;
-  padding: 3rem 3rem 2.5rem;
+  padding: 2.5rem 2.5rem 1.75rem;
   border-radius: 1rem;
   background-color: #755efc1a;
   /* media queries */
