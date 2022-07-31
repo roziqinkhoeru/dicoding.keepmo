@@ -18,6 +18,7 @@ const PublicNote = () => {
             <NoteContainer>
               <Note archived={false} />
               <Note archived={false} />
+              <Note archived={false} />
               <Note archived={true} />
             </NoteContainer>
           </Wrapper>

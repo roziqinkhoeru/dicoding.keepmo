@@ -6,7 +6,7 @@ const NavSearch = () => {
   return (
     <>
       <div>
-        <Form>
+        <Form id='formNavSearch'>
           <button type='submit' className='btn_search'>
             <FiSearch />
           </button>

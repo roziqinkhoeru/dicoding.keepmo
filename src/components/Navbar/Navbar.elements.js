@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Navigation = styled.nav`
   width: 100%;
   background-color: #111326;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 3.5px 0.7px rgba(0, 0, 0, 0.025),
+    0px 7.2px 5.9px rgba(0, 0, 0, 0.035), 0px 11.3px 15.1px rgba(0, 0, 0, 0.045),
+    0px 16.8px 28.9px rgba(0, 0, 0, 0.055), 0px 30px 57px rgba(0, 0, 0, 0.08);
 `;
 export const NavbarContainer = styled.div`
   margin: 0 auto;
@@ -11,6 +17,16 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* media queries */
+  @media (max-width: 840px) {
+    padding: 1rem 3rem;
+  }
+  @media (max-width: 640px) {
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+  }
 `;
 export const NavbarBrand = styled.div`
   margin-right: 1rem;

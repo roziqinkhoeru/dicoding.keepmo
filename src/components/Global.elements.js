@@ -2,12 +2,26 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   width: 100%;
+
+  &#archiveNote {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 82rem;
   padding: 1rem 5rem;
+  /* media queries */
+  @media (max-width: 840px) {
+    padding: 1rem 3rem;
+  }
+  @media (max-width: 640px) {
+    padding: 1rem 2rem;
+  }
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+  }
 `;
 
 export const InputGroup = styled.div`
@@ -17,6 +31,12 @@ export const InputGroup = styled.div`
 
 export const Form = styled.form`
   position: relative;
+  &#formNavSearch {
+    /* media queries */
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
   & .btn_search {
     position: absolute;
     padding: 0;
@@ -38,11 +58,15 @@ export const TitleSection = styled.h2`
 
 export const Wrapper = styled.div`
   margin-bottom: 1.5rem;
+  /* media queries */
+  @media (max-width: 576px) {
+    margin-bottom: 0.875rem;
+  }
 `;
 export const NoteContainer = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1.5rem;
 `;
 export const CardNote = styled.div`
@@ -53,7 +77,7 @@ export const CardNote = styled.div`
   border-radius: 1rem;
   border: 1px solid transparent;
   background-color: #181c36;
-  grid-column: span 1 / span 1;
+  grid-column: span 3 / span 3;
   transition: all 0.2s ease-in-out;
   /* hover */
   &:hover {
@@ -67,6 +91,16 @@ export const CardNote = styled.div`
       opacity: 1;
       transition: visibility 0s linear 0s, opacity 300ms;
     }
+  }
+  /* media queries */
+  @media (max-width: 1200px) {
+    grid-column: span 4 / span 4;
+  }
+  @media (max-width: 960px) {
+    grid-column: span 6 / span 6;
+  }
+  @media (max-width: 520px) {
+    grid-column: span 12 / span 12;
   }
 `;
 export const TitleNote = styled.h5`

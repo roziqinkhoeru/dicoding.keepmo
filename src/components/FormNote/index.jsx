@@ -6,7 +6,13 @@ import {
   Section,
   TitleSection,
 } from "../Global.elements";
-import { TitleWelcome } from "./FormNote.elements";
+import {
+  BtnGroup,
+  BtnSubmitForm,
+  FormContainer,
+  FormWrapper,
+  TitleWelcome,
+} from "./FormNote.elements";
 
 const FormNote = () => {
   return (
@@ -14,31 +20,35 @@ const FormNote = () => {
       <Section id='formNote'>
         <Container>
           <TitleWelcome>Selamat Datang 👋</TitleWelcome>
-          <div className=''>
-            <TitleSection>Buat Catatanmu</TitleSection>
+          <FormContainer>
             <Form>
-              <InputGroup>
-                <input
-                  className='input_field'
-                  type='text'
-                  name='judul'
-                  id='judul'
-                  placeholder='Judul'
-                />
-              </InputGroup>
-              <InputGroup>
-                <textarea
-                  className='input_field'
-                  name='catatan'
-                  id='catatan'
-                  cols='30'
-                  rows='5'
-                  placeholder='Tulis catatanmu di sini...'
-                ></textarea>
-              </InputGroup>
-              <button type='submit'>Buat</button>
+              <FormWrapper>
+                <TitleSection>Buat Catatanmu</TitleSection>
+                <InputGroup>
+                  <input
+                    className='input_field'
+                    type='text'
+                    name='judul'
+                    id='judul'
+                    placeholder='Judul'
+                  />
+                </InputGroup>
+                <InputGroup>
+                  <textarea
+                    className='input_field'
+                    name='catatan'
+                    id='catatan'
+                    cols='30'
+                    rows='6'
+                    placeholder='Tulis catatanmu di sini...'
+                  ></textarea>
+                </InputGroup>
+                <BtnGroup>
+                  <BtnSubmitForm type='submit'>Buat</BtnSubmitForm>
+                </BtnGroup>
+              </FormWrapper>
             </Form>
-          </div>
+          </FormContainer>
         </Container>
       </Section>
     </>

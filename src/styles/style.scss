@@ -15,6 +15,26 @@
     }
   }
 }
+.nav_preference_item {
+  // media queries
+  @media (max-width: 991px) {
+    &:nth-child(3) {
+      display: none;
+    }
+    &:last-child {
+      margin-left: 0.75rem;
+    }
+  }
+  @media (max-width: 840px) {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+  @media (max-width: 576px) {
+    width: 2.625rem;
+    height: 2.625rem;
+  }
+}
 
 .preference_icon {
   width: 2.75rem;
@@ -33,7 +53,7 @@
     }
   }
   & svg {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     & * {
       color: $color-secondary;
       transition: all 0.2s ease-in-out;
@@ -59,6 +79,10 @@
     padding: 0.65rem 1.5rem 0.65rem 3rem;
     border-radius: 9999px;
     width: 24rem;
+    // media queries
+    @media (max-width: 768px) {
+      width: 42vw;
+    }
   }
 }
 
