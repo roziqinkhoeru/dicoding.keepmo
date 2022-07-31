@@ -36,15 +36,22 @@ export class App extends Component {
   };
   // archive note
   archivedNote = (id) => {
-    // code
+    const notes = this.state.notes;
+    const note = notes.find((note) => note.id === id);
+    note.archived = true;
+    this.setState({ notes });
   };
   // unarchived note
   unarchivedNote = (id) => {
-    // code
+    const notes = this.state.notes;
+    const note = notes.find((note) => note.id === id);
+    note.archived = false;
+    this.setState({ notes });
   };
   // delete note
   deleteNoted = (id) => {
-    // code
+    const notes = this.state.notes.filter((note) => note.id !== id);
+    this.setState({ notes });
   };
   // search note navbar
   searchNote = (e) => {
@@ -101,6 +108,7 @@ export class App extends Component {
             archivedHandling={this.archivedNote}
             unarchivedHandling={this.unarchivedNote}
             deleteHandling={this.deleteNoted}
+            searchResult={this.state.searchResult}
           />
         </main>
         <Footer />

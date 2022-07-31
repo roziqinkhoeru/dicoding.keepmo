@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+const switchColorCount = (num) => {
+  if (num === 50) {
+    return "#8c90b7";
+  } else if (num > 20) {
+    return "#5ae6bc";
+  } else if (num > 0) {
+    return "#ffd337";
+  } else {
+    return "#ff5a5f";
+  }
+};
+
 export const TitleWelcome = styled.h4`
   margin: 1.5rem 0 2rem;
 `;
@@ -48,5 +60,25 @@ export const FormContainer = styled.div`
   }
   @media (max-width: 576px) {
     width: 100%;
+  }
+`;
+export const TitleCounting = styled.p`
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  & > svg {
+    transform: translateY(-0.7px);
+    font-size: 1.25rem;
+    & > * {
+      color: ${({ count }) => switchColorCount(count)};
+      fill: ${({ count }) => switchColorCount(count)};
+    }
+  }
+  & > span {
+    margin-left: 0.3rem;
+    display: block;
+    font-size: 0.875rem;
+    color: ${({ count }) => switchColorCount(count)};
   }
 `;

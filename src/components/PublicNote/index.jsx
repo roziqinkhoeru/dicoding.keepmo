@@ -9,6 +9,8 @@ import {
   NoteContainer,
 } from "../Global.elements";
 
+import { showFormattedDate } from "../../utilities";
+
 const PublicNote = ({
   notes,
   isGrid,
@@ -41,6 +43,7 @@ const PublicNote = ({
                       }
                     }
                   })
+                  ?.sort((a, b) => (a.id > b.id ? -1 : 1))
                   ?.map((noteItem) => {
                     return (
                       <Note
@@ -50,6 +53,7 @@ const PublicNote = ({
                         deleteHandling={deleteHandling}
                         isGrid={isGrid}
                         {...noteItem}
+                        createdAt={showFormattedDate(noteItem.createdAt)}
                       />
                     );
                   })

@@ -11,7 +11,10 @@ import {
   BtnSubmitForm,
   FormContainer,
   FormWrapper,
+  TitleCounting,
 } from "./FormNote.elements";
+import { IoInfiniteSharp } from "react-icons/io5";
+import { BsCheck, BsExclamation } from "react-icons/bs";
 
 export class FormNote extends Component {
   constructor(props) {
@@ -19,20 +22,29 @@ export class FormNote extends Component {
     this.state = {
       title: "",
       body: "",
+      titleCount: 50,
+      titleCountIcon: <></>,
     };
 
     // binding
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeNote = this.onChangeNote.bind(this);
     this.onSubmitNotes = this.onSubmitNotes.bind(this);
+    this.onChangeIconCount = this.onChangeIconCount.bind(this);
   }
   onChangeTitle = (event) => {
     event.preventDefault();
-    this.setState(() => {
-      return {
+    if (event.target.value.length > 50) {
+      this.setState({
+        title: event.target.value.substring(0, 50),
+        titleCount: 0,
+      });
+    } else {
+      this.setState({
         title: event.target.value,
-      };
-    });
+        titleCount: 50 - event.target.value.length,
+      });
+    }
   };
   onChangeNote = (event) => {
     event.preventDefault();
@@ -48,7 +60,23 @@ export class FormNote extends Component {
     this.setState({
       title: "",
       body: "",
+      titleCount: 50,
     });
+  };
+  onChangeIconCount = () => {
+    if (this.state.titleCount === 50) {
+      return {
+        titleCountIcon: <IoInfiniteSharp />,
+      };
+    } else if (this.state.titleCount > 20) {
+      return {
+        titleCountIcon: <BsCheck />,
+      };
+    } else {
+      return {
+        titleCountIcon: <BsExclamation />,
+      };
+    }
   };
   render() {
     return (
@@ -59,6 +87,10 @@ export class FormNote extends Component {
             <FormContainer>
               <Form onSubmit={this.onSubmitNotes}>
                 <FormWrapper>
+                  <TitleCounting count={this.state.titleCount}>
+                    {this.onChangeIconCount().titleCountIcon}
+                    <span>Sisa karakter: {this.state.titleCount}</span>
+                  </TitleCounting>
                   <InputGroup>
                     <input
                       className='input_field'
@@ -68,6 +100,7 @@ export class FormNote extends Component {
                       placeholder='Judul'
                       value={this.state.title}
                       onChange={this.onChangeTitle}
+                      required
                     />
                   </InputGroup>
                   <InputGroup>

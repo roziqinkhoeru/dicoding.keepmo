@@ -9,12 +9,15 @@ import {
 } from "../Global.elements";
 import Note from "../Note";
 
+import { showFormattedDate } from "../../utilities";
+
 const ArchiveNote = ({
   notes,
   isGrid,
   archivedHandling,
   unarchivedHandling,
   deleteHandling,
+  searchResult,
 }) => {
   return (
     <>
@@ -27,7 +30,20 @@ const ArchiveNote = ({
                 <EmptyNote />
               ) : (
                 notes
-                  ?.filter((noteItem) => noteItem.archived)
+                  ?.filter((noteItem) => {
+                    if (noteItem.archived) {
+                      if (searchResult === "") {
+                        return noteItem;
+                      } else if (
+                        noteItem.title
+                          .toLowerCase()
+                          .includes(searchResult.toLowerCase())
+                      ) {
+                        return noteItem;
+                      }
+                    }
+                  })
+                  ?.sort((a, b) => (a.id > b.id ? -1 : 1))
                   ?.map((noteItem) => {
                     return (
                       <Note
@@ -37,6 +53,7 @@ const ArchiveNote = ({
                         deleteHandling={deleteHandling}
                         isGrid={isGrid}
                         {...noteItem}
+                        createdAt={showFormattedDate(noteItem.createdAt)}
                       />
                     );
                   })
