@@ -7,7 +7,7 @@ export const Navigation = styled.nav`
 
   width: 100%;
 
-  background-color: #111326;
+  background-color: #171a32;
   box-shadow: 0 3.5px 0.7px rgba(0, 0, 0, 0.025),
     0 7.2px 5.9px rgba(0, 0, 0, 0.035), 0 11.3px 15.1px rgba(0, 0, 0, 0.045),
     0 16.8px 28.9px rgba(0, 0, 0, 0.055), 0 30px 57px rgba(0, 0, 0, 0.08);
