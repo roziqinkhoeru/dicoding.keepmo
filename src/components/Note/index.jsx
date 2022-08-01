@@ -16,9 +16,11 @@ const Note = ({
   return (
     <>
       <CardNote isGrid={isGrid}>
-        <TitleNote>{title}</TitleNote>
-        <DateNote>{createdAt}</DateNote>
-        <BodyNote>{body}</BodyNote>
+        <div className=''>
+          <TitleNote>{title}</TitleNote>
+          <DateNote>{createdAt}</DateNote>
+          <BodyNote>{body}</BodyNote>
+        </div>
         <IconNote
           archived={archived}
           isGrid={isGrid}

@@ -3,11 +3,14 @@
 // ===== navigation =====
 .nav_preference_item:not(:last-child) {
   margin-right: 0.75rem;
-  cursor: pointer;
 
+  cursor: pointer;
+  // span child
   & > span {
     margin: 0 1.125rem 0 1.5rem;
+
     transition: all 0.2s ease-in-out;
+
     color: $color-secondary;
     // hover
     &:hover {
@@ -15,50 +18,85 @@
     }
   }
 }
+
 .nav_preference_item {
   position: relative;
-  // after
+  // child after
   & .preference_icon::after {
-    transition: all 0.2s ease-in-out;
-    position: absolute;
-    white-space: nowrap;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
     font-size: 0.8rem;
-    background-color: $color-dark-300;
-    color: $color-secondary;
-    visibility: hidden;
-    opacity: 0;
+
+    position: absolute;
     top: 2.8rem;
+
+    visibility: hidden;
+
+    padding: 0.25rem 0.5rem;
+
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+
+    opacity: 0;
+    color: $color-secondary;
+    border-radius: 0.25rem;
+    background-color: $color-dark-300;
   }
+  // first on hover at child grid after
   &:first-child:hover .preference_icon.grid_view:after {
     left: -2.15rem;
-    content: "Tampilan petak";
+
     visibility: visible;
+
+    content: "Tampilan petak";
+
     opacity: 1;
   }
+  // first on hover at child list after
   &:first-child:hover .preference_icon.list_view:after {
     left: -2.15rem;
-    content: "Tampilan daftar";
+
     visibility: visible;
+
+    content: "Tampilan daftar";
+
     opacity: 1;
   }
+  // second on hover at child after
   &:nth-child(2):hover .preference_icon::after {
     left: -1.4rem;
-    content: "Pengaturan";
+
     visibility: visible;
+
+    content: "Pengaturan";
+
     opacity: 1;
+  }
+  // third on hover at child after
+  &:nth-child(3):hover .preference_icon::after {
+    left: -1rem;
+
+    visibility: visible;
+
+    content: "Pencarian";
+
+    opacity: 1;
+  }
+  // third child
+  &:nth-child(3) {
+    display: none;
   }
   // media queries
   @media (max-width: 991px) {
-    &:nth-child(3) {
+    // quarter child
+    &:nth-child(4) {
       display: none;
     }
+    // last child
     &:last-child {
       margin-left: 0.75rem;
     }
   }
   @media (max-width: 840px) {
+    // second child
     &:nth-child(2) {
       display: none;
     }
@@ -66,65 +104,73 @@
   @media (max-width: 576px) {
     width: 2.625rem;
     height: 2.625rem;
+    // third child
+    &:nth-child(3) {
+      display: block;
+    }
   }
 }
 
 .preference_icon {
+  display: flex;
+
   width: 2.75rem;
   height: 2.75rem;
-  display: flex;
+
+  border-radius: 50%;
+
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   // hover
   &:hover {
     background-color: $color-dark-300;
+    // svg child and all child of svg
     & svg {
       & * {
         color: $color-white-90;
       }
     }
   }
+  // svg child
   & svg {
     font-size: 1.5rem;
+    // all child
     & * {
-      color: $color-secondary;
       transition: all 0.2s ease-in-out;
+
+      color: $color-secondary;
     }
   }
 }
 
+// ===== form and input =====
 .input_field {
+  width: 100%;
   padding: 0.75rem 1.25rem;
+
+  color: $color-secondary;
+  border: none;
+  border: 1px solid transparent;
   border-radius: 0.6rem;
   outline: none;
-  border: none;
   background-color: $color-dark-300;
-  color: $color-secondary;
-  border: 1px solid transparent;
-  width: 100%;
   // focus
   &:focus {
-    background-color: $color-dark-300;
     border: 1px solid $color-primary-60;
+    background-color: $color-dark-300;
   }
+  // with class search
   &.search {
-    padding: 0.65rem 1.5rem 0.65rem 3rem;
-    border-radius: 9999px;
     width: 24rem;
+    padding: 0.65rem 1.5rem 0.65rem 3rem;
+
+    border-radius: 9999px;
     // media queries
     @media (max-width: 768px) {
       width: 42vw;
     }
+    @media (max-width: 576px) {
+      width: 80vw;
+    }
   }
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-// ===== footer ======
-footer {
-  width: 100%;
-  background-color: $color-dark-400;
 }

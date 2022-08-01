@@ -2,11 +2,14 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { Form } from "../../Global.elements";
 
-const NavSearch = ({ searchNoteHandling }) => {
+const NavSearch = ({ searchNoteHandling, isShowOnClick }) => {
   return (
     <>
       <div>
-        <Form id='formNavSearch'>
+        <Form
+          id='formNavSearch'
+          className={`${isShowOnClick ? "showSearch" : ""}`}
+        >
           <button
             className='btn_search'
             onClick={(event) => event.preventDefault()}

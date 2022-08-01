@@ -32,6 +32,7 @@ export class FormNote extends Component {
     this.onSubmitNotes = this.onSubmitNotes.bind(this);
     this.onChangeIconCount = this.onChangeIconCount.bind(this);
   }
+
   onChangeTitle = (event) => {
     event.preventDefault();
     if (event.target.value.length > 50) {
@@ -46,6 +47,7 @@ export class FormNote extends Component {
       });
     }
   };
+
   onChangeNote = (event) => {
     event.preventDefault();
     this.setState(() => {
@@ -54,6 +56,7 @@ export class FormNote extends Component {
       };
     });
   };
+
   onSubmitNotes = (event) => {
     event.preventDefault();
     this.props.onAddHandler(this.state);
@@ -63,6 +66,7 @@ export class FormNote extends Component {
       titleCount: 50,
     });
   };
+
   onChangeIconCount = () => {
     if (this.state.titleCount === 50) {
       return {
@@ -78,6 +82,7 @@ export class FormNote extends Component {
       };
     }
   };
+
   render() {
     return (
       <>

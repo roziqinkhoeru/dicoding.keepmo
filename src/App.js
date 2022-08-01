@@ -18,6 +18,7 @@ export class App extends Component {
       notes: getInitialData(),
       isGrid: true,
       searchResult: "",
+      isShowSearch: false,
     };
     // binding
     this.changeNoteView = this.changeNoteView.bind(this);
@@ -26,6 +27,7 @@ export class App extends Component {
     this.deleteNoted = this.deleteNoted.bind(this);
     this.searchNote = this.searchNote.bind(this);
     this.addNotes = this.addNotes.bind(this);
+    this.showSearch = this.showSearch.bind(this);
   }
 
   // change view of notes
@@ -34,6 +36,7 @@ export class App extends Component {
       isGrid: !this.state.isGrid,
     });
   };
+
   // archive note
   archivedNote = (id) => {
     const notes = this.state.notes;
@@ -41,6 +44,7 @@ export class App extends Component {
     note.archived = true;
     this.setState({ notes });
   };
+
   // unarchived note
   unarchivedNote = (id) => {
     const notes = this.state.notes;
@@ -48,11 +52,13 @@ export class App extends Component {
     note.archived = false;
     this.setState({ notes });
   };
+
   // delete note
   deleteNoted = (id) => {
     const notes = this.state.notes.filter((note) => note.id !== id);
     this.setState({ notes });
   };
+
   // search note navbar
   searchNote = (e) => {
     this.setState(() => {
@@ -61,27 +67,30 @@ export class App extends Component {
       };
     });
   };
+
   // add notes handler
   addNotes = ({ title, body, archived = false }) => {
-    this.setState(
-      (prev) => {
-        return {
-          notes: [
-            ...prev.notes,
-            {
-              id: prev.notes.length + 1,
-              title,
-              body,
-              createdAt: new Date().toISOString(),
-              archived,
-            },
-          ],
-        };
-      },
-      () => {
-        console.log(this.state.notes);
-      }
-    );
+    this.setState((prev) => {
+      return {
+        notes: [
+          ...prev.notes,
+          {
+            id: prev.notes.length + 1,
+            title,
+            body,
+            createdAt: new Date().toISOString(),
+            archived,
+          },
+        ],
+      };
+    });
+  };
+
+  // show search
+  showSearch = () => {
+    this.setState({
+      isShowSearch: !this.state.isShowSearch,
+    });
   };
 
   render() {
@@ -91,6 +100,8 @@ export class App extends Component {
           isGrid={this.state.isGrid}
           changeViewHandling={this.changeNoteView}
           searchNoteHandling={this.searchNote}
+          showNavSearchHandling={this.showSearch}
+          isShowOnClick={this.state.isShowSearch}
         />
         <main>
           <FormNote onAddHandler={this.addNotes} />
