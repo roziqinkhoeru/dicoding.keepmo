@@ -25,7 +25,7 @@ Keepmo (Keep Memo) is a note-keeping web application using the **React Js Librar
 
 ## ⭐ Review
 
-![dicoding-review-khoeru-roziqin-submission]()
+![dicoding-review-khoeru-roziqin-submission](https://raw.githubusercontent.com/roziqinkhoeru/dicoding.keepmo/main/reviews.png)
 
 ## Getting Started with Create React App
 
